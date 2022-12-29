@@ -1,10 +1,15 @@
 const { Client, Server } = require('node-osc')
 
+// ************************************** Update these vars to suit your setup ***********************************
 // Update this IP and port to suit your Resolume machine (with OSC enabled)
 const client = new Client('127.0.0.1', 7000)
 
 // Pro7 API - update localhost:50001 to suit your Pro7 machine.
 url = "http://localhost:50001/v1/status/updates"
+
+// OSC path for a specific textbox in Resolume (Update to suit!)
+const oscCommand = "/composition/layers/3/clips/1/video/source/blocktextgenerator/text/params/lines"
+// ***************************************************************************************************************
 
 function connectToStatusStream() {
 fetch(url, {
@@ -47,7 +52,7 @@ fetch(url, {
       console.log(slideJSONData.data.current.text)
 
       // Update this OSC path to suit your specific textblock in Resolume.....
-      client.send('/composition/layers/3/clips/1/video/source/blocktextgenerator/text/params/lines', slideJSONData.data.current.text, (err) => {
+      client.send(oscCommand, slideJSONData.data.current.text, (err) => {
         if (err) console.error(err);
       });
 
