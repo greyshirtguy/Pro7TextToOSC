@@ -6,4 +6,4 @@ Needs later versions of Node that include built-in fetch support (I think versio
 Currently parameters are hardcoded - update to suit your Pro7 and Resolume machine and also update the OSC message to suit your desired textbox in Resolume.
 Make sure Resolume has OSC enabled.
 
-Run `npm install` to install required packages and then `node index.js` to run
+Run `npm install` to install required packages (for now, just node-osc) and then `node index.js` to run
