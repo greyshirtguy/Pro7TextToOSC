@@ -4,8 +4,8 @@ const { Client, Server } = require('node-osc')
 // Update this IP and port to suit your Resolume machine (with OSC enabled)
 const client = new Client('127.0.0.1', 7000)
 
-// Pro7 API - update localhost:50001 to suit your Pro7 machine.
-url = "http://localhost:50001/v1/status/updates"
+// Pro7 API - update 127.0.0.1:50001 to the IP:Port your Pro7 machine.
+url = "http://127.0.0.1:50001/v1/status/updates"
 
 // OSC path for a specific textbox in Resolume (Update to suit!)
 const oscCommand = "/composition/layers/3/clips/1/video/source/blocktextgenerator/text/params/lines"
